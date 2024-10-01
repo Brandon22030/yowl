@@ -1,0 +1,23 @@
+services:
+  backend:
+    build: ./Backend/
+    ports:
+      - "127.0.0.2:8000:8000"
+    depends_on:
+      - db
+
+  db:
+    build: ./db/
+    ports:
+      - "127.0.0.3:3307:3306"
+    # expose:
+    #   - 3306
+    env_file:
+      - ./db/.env
+    
+  frontend:
+    build: ./Frontend/
+    ports:
+      - "127.0.0.2:5173:5173"
+    depends_on:
+      - backend
