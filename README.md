@@ -13,7 +13,69 @@ Yowl is an application that lets you comment on everything on the Internet
 ![capt10](./Frontend/src/assets/images/capt10.png)
 
 # Introduction 
-This project involves the creation of an application enabling everyone to give their opinion on internet posts.
+YOWL is a comprehensive social platform that allows users to comment on any content on the Internet. The application offers a robust system for managing users, posts, comments, and categories, enabling everyone to share their opinions on web content.
+
+# Technical Architecture
+
+## Backend (Laravel)
+- **Framework**: Laravel (PHP)
+- **Database**: MySQL
+- **Authentication**: Laravel Sanctum with email verification
+- **RESTful API**: Complete resource management (users, posts, comments, categories)
+
+## Frontend (Vue.js)
+- **Framework**: Vue.js 3
+- **Routing**: Vue Router
+- **State Management**: Pinia (via stores)
+- **Styling**: Tailwind CSS
+- **Components**: Modular architecture with reusable components
+
+# Main Features
+
+## User Management
+- Registration and login
+- Email verification
+- Customizable user profile
+- User dashboard
+
+## Post Management
+- Creation, modification, and deletion of posts
+- Filtering by category
+- Adding external URLs to comment on web content
+- Image uploads
+
+## Comment System
+- Adding comments to posts
+- Viewing comments by post
+- Comment management (editing, deletion)
+
+## Content Categorization
+- Creation and management of categories
+- Navigation by category
+- Display of posts by category
+
+# Data Models
+
+1. **Users**
+   - Basic information (name, email, birthdate)
+   - Authentication (hashed password, tokens)
+   - Relationships with posts and comments
+
+2. **Posts**
+   - Title, content, image
+   - Linked URL (for referencing external content)
+   - Category association
+   - Relationship with author (user)
+
+3. **Comments**
+   - Text content
+   - Relationship with user (author)
+   - Relationship with commented post
+
+4. **Categories**
+   - Name and image
+   - Relationship with associated posts
+   - Relationship with creator user
 
 # Getting Started
 
@@ -39,9 +101,12 @@ This project involves the creation of an application enabling everyone to give t
 
 # Usage
 
-- Check that tailwind is installed in the project
-- Check that composer and laravel are installed 
-- Check that components are imported correctly
+- Ensure Tailwind CSS is properly installed in the project
+- Verify that Composer and Laravel are installed correctly
+- Check that all components are imported correctly
+- Start the backend server with `php artisan serve`
+- Start the frontend development server with `npm run dev`
+- Access the application through your browser at the local development URL
 
 # Authors
 1. This project was carried out by Daniel MEDEHOU project manager responsible for
